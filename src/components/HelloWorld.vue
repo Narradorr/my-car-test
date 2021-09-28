@@ -30,11 +30,19 @@
   </div>
 </template>
 
+
+
 <script>
+import {useUsers} from '../use/test'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  async setup() {
+    const {users} = await useUsers()
+    return {users}
   }
 }
 </script>
